@@ -1,0 +1,349 @@
+/* Reset & Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin-left: 0;
+  background: rgb(6, 6, 6);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px; /* Add padding to account for fixed navbar */
+}
+
+
+#headingLogo {
+  font-size: 40px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(45deg, #fff, #b6b3b3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+}
+
+/* Navigation Bar Container (previously sidebar) */
+.sideBar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: rgb(20, 20, 20);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation Links Container */
+.navBarLinks {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Individual Navigation Link Items */
+.navBarLinks a { 
+  padding: 0 25px;
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Hover Effects for Navigation Links */
+.navBarLinks a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.navBarLinks a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  }
+  
+
+  .navBarLinks a:hover::after {
+  width: 100%;
+}
+
+
+/* Main Section */
+main {
+  padding: 20px;
+  flex: 1;
+  width: 100%;
+  margin-left: 0;
+}
+
+/* Drink Menue Section */
+#drink_Menue {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+  align-items: start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#drink_Menue img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  border-radius: 8px;
+  display: block;
+}
+
+#drink_Menue img:hover {
+  box-shadow: 0 10px 25px rgb(246, 243, 243);
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+
+
+
+
+/* Responsive Media Queries */
+
+/* For Tablets and Medium Screens */
+@media (max-width: 768px) {
+  .navBarLinks a {
+    padding: 0 15px;
+    font-size: 14px;
+  }
+
+  #gallerySection {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  #gallerySection img {
+    height: 250px;
+  }
+}
+
+/* For Mobile Devices */
+@media (max-width: 480px) {
+  body {
+    padding-top: 50px;
+  }
+
+  .sideBar {
+    height: 50px;
+  }
+
+  .navBarLinks {
+    justify-content: space-around;
+  }
+
+  .navBarLinks a {
+    padding: 0 10px;
+    font-size: 12px;
+  }
+
+  #headingLogo {
+    font-size: 28px;
+    padding: 10px;
+  }
+  
+  #gallerySection {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+  
+  #gallerySection img {
+    height: 280px;
+    max-width: 100%;
+  }
+  
+  .footerLinks {
+    padding: 5px;
+  }
+  
+  .footerLinks p,
+  .footerLinks a {
+    font-size: 12px;
+    margin: 3px;
+    padding: 5px 10px;
+  }
+}
+
+/* Contact Section Styling */
+#contact_Us {
+    padding: 60px 20px;
+    background: rgba(20, 20, 20, 0.7);
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
+#contact_Us h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.contact-container {
+    padding: 20px;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.contact-item {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.contact-item i {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.contact-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.contact-item p, 
+.contact-item a {
+    font-size: 1.1rem;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+.contact-item a:hover {
+    color: #b6b3b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #contact_Us {
+        padding: 40px 15px;
+    }
+
+    #contact_Us h2 {
+        font-size: 2rem;
+    }
+
+    .contact-item {
+        padding: 15px;
+    }
+
+    .contact-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .contact-item p,
+    .contact-item a {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #contact_Us h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+  
+  /* Footer Styling */
+  footer {
+    width: 100%;
+    background: rgb(20, 20, 20);
+    padding: 20px 0;
+    margin-top: auto;
+  }
+  
+  .footerLinks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footerLinks p {
+    margin: 5px;
+    font-size: 16px;
+  }
+  
+  .footerLinks a {
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 14px;
+  }
+  
+  .footerLinks a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+  }
